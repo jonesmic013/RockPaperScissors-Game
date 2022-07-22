@@ -46,7 +46,7 @@ int main (void)
         }
         getchar();
         getchar();
-    } while (playerWins <= (numRounds / 2) || playerWins <= (comWins / 2));
+    } while ((playerWins <= (numRounds / 2) || playerWins <= (comWins / 2)) && round <= numRounds);
 
     printResults(round, playerWins, comWins, ties); // function call
     goodbye(); // function call
