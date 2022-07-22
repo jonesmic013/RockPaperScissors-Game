@@ -14,6 +14,7 @@ int main (void)
 {
     // Local Declarations
     int numRounds; // max rounds to play (aka best of ODD_NUMBER)
+    int winsNeeded; // wins needed to win the game
     int playerWins; // round wins by user
     int comWins; // round wins by computer
     int ties; // number of ties
@@ -23,7 +24,11 @@ int main (void)
     // Statements
     welcome(); // function call
     numRounds = getNumRounds(); // function call
+    winsNeeded = ceil((double) (numRounds) / 2.0);
     round = 1;
+    playerWins = 0;
+    comWins = 0;
+    ties = 0;
     do
     {
         printf("\n----- Round %d/%d -----\n", round, numRounds);
@@ -32,22 +37,24 @@ int main (void)
         {
             printf("\nRound %d winner: PLAYER\nPress ENTER to continue.", round);
             playerWins++;
-            round++;
         }
         else if (roundWinner == 2) // computer won round
         {
             printf("\nRound %d winner: COMPUTER\nPress ENTER to continue.", round);
             comWins++;
-            round++;
         }
         else
         {
             printf("\nRound %d winner: TIE\nReplaying round...\nPress ENTER to continue.", round);
             ties++;
         }
+        if (!(playerWins < winsNeeded && comWins < winsNeeded && round <= numRounds) && roundWinner != 0)
+        {
+            round++;
+        }
         getchar();
         getchar();
-    } while ((playerWins <= ceil((double) numRounds / 2.0) && comWins <= ceil((double) numRounds / 2.0)) && round <= numRounds);
+    } while (playerWins < winsNeeded && comWins < winsNeeded && round <= numRounds);
 
     printResults(round, playerWins, comWins, ties); // function call
     goodbye(); // function call
