@@ -47,7 +47,7 @@ int main (void)
         }
         getchar();
         getchar();
-    } while ((playerWins <= ceil((double) numRounds / 2.0) && playerWins <= ceil((double) comWins / 2.0)) && round <= numRounds);
+    } while ((playerWins <= ceil((double) numRounds / 2.0) && comWins <= ceil((double) numRounds / 2.0)) && round <= numRounds);
 
     printResults(round, playerWins, comWins, ties); // function call
     goodbye(); // function call
