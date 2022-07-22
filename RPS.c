@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void welcome(); // Function Declaration
 int getNumRounds(); // Function Declaration
@@ -46,7 +47,7 @@ int main (void)
         }
         getchar();
         getchar();
-    } while ((playerWins <= (numRounds / 2) || playerWins <= (comWins / 2)) && round <= numRounds);
+    } while ((playerWins <= ceil((double) numRounds / 2.0) && playerWins <= ceil((double) comWins / 2.0)) && round <= numRounds);
 
     printResults(round, playerWins, comWins, ties); // function call
     goodbye(); // function call
