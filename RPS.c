@@ -26,7 +26,7 @@ int main (void)
     round = 1;
     do
     {
-        printf("\n----- Round #%d/%d -----\n", round, numRounds);
+        printf("\n----- Round %d/%d -----\n", round, numRounds);
         roundWinner = playRound(); // function call
         if (roundWinner == 1) // player won round
         {
