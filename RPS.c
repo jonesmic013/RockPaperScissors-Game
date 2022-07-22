@@ -109,7 +109,7 @@ int playRound()
     } while (playerInput < 1 || playerInput > 3); // must choose 1-3
 
     // get random move for computer
-    comInput = rand() % 4 + 1;
+    comInput = rand() % 3 + 1;
 
     // print what both people chose
     printf("You chose: ");
