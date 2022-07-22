@@ -152,7 +152,7 @@ int compareMoves(int playerInput, int comInput)
     }
     else if ((playerInput == 1 && comInput == 3) || (playerInput == 2 && comInput == 1) || (playerInput == 3 && comInput == 2))
     {
-        roundWinner == 1;
+        roundWinner = 1;
     } // check all 3 conditions where the player beats the computer
 
     return roundWinner;
@@ -172,4 +172,5 @@ void goodbye()
     // Statements
     printf("\n\nThanks for playing!\n");
     printf("Press ENTER to exit.");
+    getchar();
 }
