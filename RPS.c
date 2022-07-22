@@ -20,6 +20,7 @@ int main (void)
     round = 1;
     do
     {
+        printf("\n--- Round #%d ---\n", round);
         roundWinner = playRound(); // function call
         if (roundWinner) // player won round
         {
@@ -33,7 +34,7 @@ int main (void)
         }
         getchar();
         round++;
-    } while (playerWins >= (numRounds / 2) || playerWins >= (comWins / 2));
+    } while (playerWins <= (numRounds / 2) || playerWins <= (comWins / 2));
 
     return 0;
     // main
@@ -94,10 +95,12 @@ int playRound()
     
     // get random move for computer
     comInput = rand() % 4 + 1;
+    printf("\nCOM CHOSE: %d\n", comInput);
 
     // print what both people chose
     printf("YOU chose: ROCK\n");
     printf("COMPUTER chose: ROCK");
 
+    roundWinner = 0;
     return roundWinner; // return winner of round
 }
