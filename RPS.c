@@ -48,7 +48,7 @@ int main (void)
             printf("\nRound %d winner: TIE\nReplaying round...\nPress ENTER to continue.", round);
             ties++;
         }
-        if (!(playerWins < winsNeeded && comWins < winsNeeded && round <= numRounds) && roundWinner != 0)
+        if (playerWins < winsNeeded && comWins < winsNeeded && round <= numRounds && roundWinner != 0)
         {
             round++;
         }
