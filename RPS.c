@@ -6,7 +6,7 @@ int getNumRounds(); // Function Declaration
 int playRound(); // Function Declaration
 void printMove(int move); // Function Declaration
 int compareMoves(int playerInput, int comInput); // Function Declaration
-void printResults(int round, int playerWins, int comWins); // Function Declaraton
+void printResults(int round, int playerWins, int comWins, int ties); // Function Declaraton
 void goodbye(); // Function Declaration
 
 int main (void)
@@ -48,7 +48,8 @@ int main (void)
         getchar();
     } while (playerWins <= (numRounds / 2) || playerWins <= (comWins / 2));
 
-    goodbye();
+    printResults(round, playerWins, comWins, ties); // function call
+    goodbye(); // function call
 
     return 0;
     // main
