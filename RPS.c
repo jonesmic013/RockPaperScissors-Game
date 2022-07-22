@@ -33,7 +33,7 @@ int main (void)
             playerWins++;
             round++;
         }
-        else if (roundWinner == 1) // computer won round
+        else if (roundWinner == 2) // computer won round
         {
             printf("\nRound %d winner: COMPUTER\nPress ENTER to continue.", round);
             comWins++;
@@ -150,12 +150,10 @@ int compareMoves(int playerInput, int comInput)
     {
         roundWinner = 0;
     }
-
-    // check all 3 conditions where the player beats the computer
-    if ((playerInput == 1 && comInput == 3) || (playerInput == 2 && comInput == 1) || (playerInput == 3 && comInput == 2))
+    else if ((playerInput == 1 && comInput == 3) || (playerInput == 2 && comInput == 1) || (playerInput == 3 && comInput == 2))
     {
         roundWinner == 1;
-    }
+    } // check all 3 conditions where the player beats the computer
 
     return roundWinner;
 }
